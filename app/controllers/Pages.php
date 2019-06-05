@@ -31,38 +31,37 @@
 
         $this->view('pages/about-template', $data);
       }
-      public function bookin() {
-
-
-        $info  = $this->_Pages->GetInfo();
-
+      public function Booking() {
+        $info  = $this->_Pages->GetBooking();
         $data = [
           'info' => $info
         ];
 
-        $this->view('pages/book-in', $data);
+        $this->view('pages/forms-template', $data);
       }
+
+      
       public function contact() {
 
 
-        $info  = $this->_Pages->GetInfo();
+        $info  = $this->_Pages->GetContact();
 
         $data = [
           'info' => $info
         ];
 
-        $this->view('pages/contact', $data);
+        $this->view('pages/forms-template', $data);
       }
       public function feedback() {
 
 
-        $info  = $this->_Pages->GetInfo();
+        $info  = $this->_Pages->GetFeedback();
 
         $data = [
           'info' => $info
         ];
 
-        $this->view('pages/feedback', $data);
+        $this->view('pages/forms-template', $data);
       }
       public function modifications() {
 
@@ -109,4 +108,41 @@
         $this->view('pages/services-template', $data);
       }
 
+      public function BookIn() {
+        $name = $_POST['names'];
+        $phone = $_POST['phone'];
+        $email = $_POST['emails'];
+        $subject = $_POST['subject'];
+        $action = $this->db->getAction();
+        $this->_Pages->addBooking($name, $phone, $email, $subject);
+        $data = [
+          'action' => $action
+        ];
+        $this->view('pages/forms-template.php', $data);
+        header("Location: " . URLROOT . "Pages/Booking/?formsubmitted=1");
+        exit;
+      }
+
+      public function addthefeedback() {
+        $name = $_POST['names'];
+        $phone = $_POST['phone'];
+        $email = $_POST['emails'];
+        $subject = $_POST['subject'];
+
+        $this->_Pages->addFeedBack($name, $phone, $email, $subject);
+
+        header("Location: " . URLROOT . "Pages/Feedback/?formsubmitted=1");
+        exit;
+      }
+      public function addthecontact() {
+        $name = $_POST['names'];
+        $phone = $_POST['phone'];
+        $email = $_POST['emails'];
+        $subject = $_POST['subject'];
+
+        $this->_Pages->addContactUs($name, $phone, $email, $subject);
+
+        header("Location: " . URLROOT . "Pages/Contact/?formsubmitted=1");
+        exit;
+      }
     }

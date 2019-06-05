@@ -61,13 +61,13 @@
 
 
                         <li class="nav-item">
-                            <a class="nav-link" href="Feedback.php">   FEEDBACK   </a>
+                            <a class="nav-link" href="/Pages/Feedback">   FEEDBACK   </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="Book-in.php">   BOOK-IN   </a>
+                            <a class="nav-link" href="/Pages/Booking">   BOOK-IN   </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="Contact.php">   CONTACT   </a>
+                            <a class="nav-link" href="/Pages/Contact">   CONTACT   </a>
                         </li>
                     </ul>
                 </div>

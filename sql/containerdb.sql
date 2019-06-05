@@ -5,6 +5,7 @@ DROP TABLE IF EXISTS Booking;
 DROP TABLE IF EXISTS Feedback;
 DROP TABLE IF EXISTS Info;
 DROP TABLE IF EXISTS Services;
+DROP TABLE IF EXISTS Forms;
 
 CREATE TABLE IF NOT EXISTS Contact (
   CID int(10) AUTO_INCREMENT,
@@ -20,7 +21,6 @@ CREATE TABLE IF NOT EXISTS Contact (
 CREATE TABLE IF NOT EXISTS Booking (
   BkID int(10) AUTO_INCREMENT,
   Name varchar(25) NOT NULL,
-  CarRego varchar(6) NOT NULL,
   PhoneNumber varchar(12) NOT NULL,
   Email varchar(30) NOT NULL,
   info varchar(250) NOT NULL,
@@ -46,6 +46,15 @@ CREATE TABLE IF NOT EXISTS Info
     PRIMARY KEY (InfoID)
 );
 
+CREATE TABLE IF NOT EXISTS Forms
+(
+    FormID int(10),
+    Title varchar(100) NULL,
+    Heading varchar(100) NULL,
+    FormAction varchar(40),
+    FormsTypeID int,
+    PRIMARY KEY (FormID)
+);
 
 CREATE TABLE IF NOT EXISTS Services
 (
@@ -58,12 +67,10 @@ CREATE TABLE IF NOT EXISTS Services
     PRIMARY KEY (SID)
 );
 
-INSERT INTO Booking(Name, CarRego, PhoneNumber, Email, info) VALUES ("Bob","agd333","0272245252","bob@gmail.com","modifications");
-INSERT INTO Booking(Name, CarRego, PhoneNumber, Email, info) VALUES ("Bobby","agb333","0271245252","bobby@gmail.com","modifications");
-INSERT INTO Booking(Name, CarRego, PhoneNumber, Email, info) VALUES ("Bobby","agb333","0271245252","bobby@gmail.com","modifications");
-INSERT INTO Booking(Name, CarRego, PhoneNumber, Email, info) VALUES ("Bobby","agb333","0271245252","bobby@gmail.com","modifications");
-INSERT INTO Booking(Name, CarRego, PhoneNumber, Email, info) VALUES ("Bobby","agb333","0271245252","bobby@gmail.com","modifications");
-INSERT INTO Booking(Name, CarRego, PhoneNumber, Email, info) VALUES ("Bobby","agb333","0271245252","bobby@gmail.com","modifications");
+INSERT INTO Forms (FormID, Title, Heading, FormAction, FormsTypeID) VALUES (1, "Place FeedBack", "Feedback Form", '/Pages/addthefeedback', 1);
+INSERT INTO Forms (FormID, Title, Heading, FormAction, FormsTypeID) VALUES (2, "What would you like to Book-In", "Booking Form", '/Pages/BookIn', 2);
+INSERT INTO Forms (FormID, Title, Heading, FormAction, FormsTypeID) VALUES (3, "Write your query", "Contact Form", '/Pages/addthecontact', 3);
+
 
 INSERT INTO Contact(Name, PhoneNumber, Email, Enquiry) VALUES ("Bobby","0271245252","bobby@gmail.com","book my car for a wof");
 INSERT INTO Contact(Name, PhoneNumber, Email, Enquiry) VALUES ("Bobby","0271245252","bobby@gmail.com","book my car for a wof");

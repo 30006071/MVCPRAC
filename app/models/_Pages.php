@@ -50,12 +50,21 @@
       return $this->db->resultSet();
     }
 
-    public function GetForms()
+    public function GetFeedback()
     {
-      $this->db->query('SELECT * FROM Forms');
+      $this->db->query('SELECT * FROM Forms WHERE FormsTypeID = 1');
       return $this->db->resultSet();
     }
-
+    public function GetBooking()
+    {
+      $this->db->query('SELECT * FROM Forms WHERE FormsTypeID = 2');
+      return $this->db->resultSet();
+    }
+    public function GetContact()
+    {
+      $this->db->query('SELECT * FROM Forms WHERE FormsTypeID = 3');
+      return $this->db->resultSet();
+    }
     public function title() {
       return "Show All People";
     }
@@ -67,15 +76,16 @@
     }
 
     //exaple: db data - insert
-    public function addPerson($fn, $ln, $dob) {
+    public function addBooking($name, $phone, $email, $info) {
       
       //Adding data to database
-      $this->db->query('INSERT INTO  tbl_people (FNAME, LNAME, DOB) VALUES (:fn, :ln, :dob)');
+      $this->db->query('INSERT INTO  Booking (Name, PhoneNumber, Email, info) VALUES (:name, :phone, :email, :info)');
 
       //Binding Variables
-      $this->db->bind(':fn', $fn);
-      $this->db->bind(':ln', $ln);
-      $this->db->bind(':dob', $dob);
+      $this->db->bind(':name', $name);
+      $this->db->bind(':phone', $phone);
+      $this->db->bind(':email', $email);
+      $this->db->bind(':info', $info);
 
       //Return true or false, based on if query is successful or not
       if($this->db->execute()) {
@@ -83,6 +93,48 @@
       } else {
           return false;
       }
+    }
+
+    public function addContactUs($name, $phone, $email, $info) {
+      
+      //Adding data to database
+      $this->db->query('INSERT INTO  Contact (Name, PhoneNumber, Email, info) VALUES (:name, :phone, :email, :info)');
+
+      //Binding Variables
+      $this->db->bind(':name', $name);
+      $this->db->bind(':phone', $phone);
+      $this->db->bind(':email', $email);
+      $this->db->bind(':info', $info);
+
+      //Return true or false, based on if query is successful or not
+      if($this->db->execute()) {
+          return true;
+      } else {
+          return false;
+      }
+    }
+
+    public function addFeedBack($name, $phone, $email, $info) {
+      
+      //Adding data to database
+      $this->db->query('INSERT INTO  Feedback (Name, PhoneNumber, Email, info) VALUES (:name, :phone, :email, :info)');
+
+      //Binding Variables
+      $this->db->bind(':name', $name);
+      $this->db->bind(':phone', $phone);
+      $this->db->bind(':email', $email);
+      $this->db->bind(':info', $info);
+
+      //Return true or false, based on if query is successful or not
+      if($this->db->execute()) {
+          return true;
+      } else {
+          return false;
+      }
+    }
+    public function getAction() {
+      $this->db->query('SELECT FormAction FROM Forms WHERE FormsTypeID = 1');
+
     }
   }
 ?>
