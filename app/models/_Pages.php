@@ -7,19 +7,52 @@
         $this->db = new Database;
     }
 
-    // Any model functions go here
-    // Can return DB data or static
-
-    /////////////////////////////////////////////////
-    //////////////// EXAMPLES ///////////////////////
-    /////// YOU SHOULD DELETE THESE AFTER ///////////
-    /////////////////////////////////////////////////
-
-    //example: static data
-
-    public function GetInfo()
+    public function GetModifications()
     {
-      $this->db->query('SELECT * FROM Info WHERE InfoID = 1');
+      $this->db->query('SELECT * FROM Services WHERE ServiceTypeID = 1');
+      return $this->db->resultSet();
+    }
+
+    public function GetServicing()
+    {
+      $this->db->query('SELECT * FROM Services WHERE ServiceTypeID = 2');
+      return $this->db->resultSet();
+    }
+
+    public function GetRepairs()
+    {
+      $this->db->query('SELECT * FROM Services WHERE ServiceTypeID = 3');
+      return $this->db->resultSet();
+    }
+
+    public function GetWarrants()
+    {
+      $this->db->query('SELECT * FROM Services WHERE ServiceTypeID = 4');
+      return $this->db->resultSet();
+    }
+
+
+
+    public function GetIndex()
+    {
+      $this->db->query('SELECT * FROM Info WHERE InfoTypeID = 1');
+      return $this->db->resultSet();
+    }
+    public function GetAbout()
+    {
+      $this->db->query('SELECT * FROM Info WHERE InfoTypeID = 2');
+      return $this->db->resultSet();
+    }
+
+    public function GetServices()
+    {
+      $this->db->query('SELECT * FROM Services');
+      return $this->db->resultSet();
+    }
+
+    public function GetForms()
+    {
+      $this->db->query('SELECT * FROM Forms');
       return $this->db->resultSet();
     }
 
