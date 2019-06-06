@@ -67,30 +67,14 @@ CREATE TABLE IF NOT EXISTS Services
     PRIMARY KEY (SID)
 );
 
-INSERT INTO Forms (FormID, Title, Heading, FormAction, FormsTypeID) VALUES (1, "Place FeedBack", "Feedback Form", '/Pages/addthefeedback', 1);
+INSERT INTO Forms (FormID, Title, Heading, FormAction, FormsTypeID) VALUES (1, "Place FeedBack", "Feedback Form", '/Pages/addTheFeedback', 1);
 INSERT INTO Forms (FormID, Title, Heading, FormAction, FormsTypeID) VALUES (2, "What would you like to Book-In", "Booking Form", '/Pages/BookIn', 2);
-INSERT INTO Forms (FormID, Title, Heading, FormAction, FormsTypeID) VALUES (3, "Write your query", "Contact Form", '/Pages/addthecontact', 3);
-
-
-INSERT INTO Contact(Name, PhoneNumber, Email, Enquiry) VALUES ("Bobby","0271245252","bobby@gmail.com","book my car for a wof");
-INSERT INTO Contact(Name, PhoneNumber, Email, Enquiry) VALUES ("Bobby","0271245252","bobby@gmail.com","book my car for a wof");
-INSERT INTO Contact(Name, PhoneNumber, Email, Enquiry) VALUES ("Bobby","0271245252","bobby@gmail.com","book my car for a wof");
-INSERT INTO Contact(Name, PhoneNumber, Email, Enquiry) VALUES ("Bobby","0271245252","bobby@gmail.com","book my car for a wof");
-INSERT INTO Contact(Name, PhoneNumber, Email, Enquiry) VALUES ("Bobby","0271245252","bobby@gmail.com","book my car for a wof");
-INSERT INTO Contact(Name, PhoneNumber, Email, Enquiry) VALUES ("Bobby","0271245252","bobby@gmail.com","book my car for a wof");
-
-INSERT INTO Feedback(Name, PhoneNumber, Email, Feedback) VALUES ("Bobby","0271245252","bobby@gmail.com","quality work");
-INSERT INTO Feedback(Name, PhoneNumber, Email, Feedback) VALUES ("Bobby","0271245252","bobby@gmail.com","quality work");
-INSERT INTO Feedback(Name, PhoneNumber, Email, Feedback) VALUES ("Bobby","0271245252","bobby@gmail.com","quality work");
-INSERT INTO Feedback(Name, PhoneNumber, Email, Feedback) VALUES ("Bobby","0271245252","bobby@gmail.com","quality work");
-INSERT INTO Feedback(Name, PhoneNumber, Email, Feedback) VALUES ("Bobby","0271245252","bobby@gmail.com","quality work");
-INSERT INTO Feedback(Name, PhoneNumber, Email, Feedback) VALUES ("Bobby","0271245252","bobby@gmail.com","quality work");
+INSERT INTO Forms (FormID, Title, Heading, FormAction, FormsTypeID) VALUES (3, "Write your query", "Contact Form", '/Pages/addTheContact', 3);
  
 INSERT INTO Info (InfoID, Title, Inform, ImageURL, InfoTypeID) VALUES (1, 'Welcome to AutoCraft Central', "Located in Tauranga, New Zealand, Autocraft-Central provides automotive repairs and servicing for all makes and models of motor vehicles. Autocraft-Central has been in operation since November 2011, and by means of earned reputation and client recommendations continually builds an ever increasing loyal customer base. Autocraft-Central is jointly owned by Stephen O'Donoghue and Andrew Erith, both certified technicians bringing between them 48 years experience within the motor industry. Operating from a fully equipped, modern workshop, Autocraft-Central is certified by the New Zealand Transport Agency.", '/public/images/shop.jpg', 1);
 INSERT INTO Info (InfoID, Title, Inform, ImageURL, InfoTypeID) VALUES (2, 'AutoCraft Central', "Here at Autocraft we aim too provide outstanding customer service. Every client is treated as an individual, not just a number, and long-term relationships are formed by treating each person with the utmost respect, fairness, honesty and integrity. Our Workshops current project, Andys (Andrew Erith the Founder of autocraft Central) replica of a 1983 Bathurst Group C Mazda RX7 is pictured", '/public/images/about.jpg', 2);
 INSERT INTO Info (InfoID, ImageURL, InfoTypeID) VALUES (4, '/public/images/car.jpg', 1);
 INSERT INTO Info (InfoID, ImageURL, InfoTypeID) VALUES (3, '/public/images/car.jpg', 2);
-
 
 INSERT INTO Services (SID, Title, Heading, Text, ImageURL, ServiceTypeID) VALUES (1, 'Modifications', 'Fabrication', "All of our work is hand made. Turbo manifolds, turbo fitment & setups, alloy pipe work, and mandrel exhaust systems are only a few of the many products we have to offer, so if you're needing turbo upgrades, custom fabrication, or just some helpful advice, give us a call today.", '/public/images/fab.jpg', 1);
 INSERT INTO Services (SID, Heading, Text, ImageURL, ServiceTypeID) VALUES (2, 'Performance Builds', "Our large engine workshop and experienced team give you total peace of mind for your custom built high performance race engine. We have a huge range of machinery we offer a total engine service, eliminating the need for outwork, ensuring quality and precision in our work through every step in the process.", '/public/images/perform.jpg', 1);

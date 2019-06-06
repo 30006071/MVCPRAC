@@ -1,5 +1,4 @@
 <?php
-  //option, but easy: classname same as controller with leading underbar
   class _Pages {
     private $db;
 
@@ -69,25 +68,16 @@
       return "Show All People";
     }
 
-    //example: db data - select
-    public function getAllPeople() {
-      $this->db->query('SELECT * FROM tbl_people');
-      return $this->db->resultSet();
-    }
 
-    //exaple: db data - insert
     public function addBooking($name, $phone, $email, $info) {
       
-      //Adding data to database
       $this->db->query('INSERT INTO  Booking (Name, PhoneNumber, Email, info) VALUES (:name, :phone, :email, :info)');
 
-      //Binding Variables
       $this->db->bind(':name', $name);
       $this->db->bind(':phone', $phone);
       $this->db->bind(':email', $email);
       $this->db->bind(':info', $info);
 
-      //Return true or false, based on if query is successful or not
       if($this->db->execute()) {
           return true;
       } else {
@@ -95,18 +85,15 @@
       }
     }
 
-    public function addContactUs($name, $phone, $email, $info) {
+    public function addContactUs($name, $phone, $email, $enquiry) {
       
-      //Adding data to database
-      $this->db->query('INSERT INTO  Contact (Name, PhoneNumber, Email, info) VALUES (:name, :phone, :email, :info)');
+      $this->db->query('INSERT INTO  Contact (Name, PhoneNumber, Email, Enquiry) VALUES (:name, :phone, :email, :enquiry)');
 
-      //Binding Variables
       $this->db->bind(':name', $name);
       $this->db->bind(':phone', $phone);
       $this->db->bind(':email', $email);
-      $this->db->bind(':info', $info);
+      $this->db->bind(':enquiry', $enquiry);
 
-      //Return true or false, based on if query is successful or not
       if($this->db->execute()) {
           return true;
       } else {
@@ -114,27 +101,20 @@
       }
     }
 
-    public function addFeedBack($name, $phone, $email, $info) {
+    public function addFeedback($name, $phone, $email, $feedback) {
       
-      //Adding data to database
-      $this->db->query('INSERT INTO  Feedback (Name, PhoneNumber, Email, info) VALUES (:name, :phone, :email, :info)');
+      $this->db->query('INSERT INTO  Feedback (Name, PhoneNumber, Email, Feedback) VALUES (:name, :phone, :email, :feedback)');
 
-      //Binding Variables
       $this->db->bind(':name', $name);
       $this->db->bind(':phone', $phone);
       $this->db->bind(':email', $email);
-      $this->db->bind(':info', $info);
+      $this->db->bind(':feedback', $feedback);
 
-      //Return true or false, based on if query is successful or not
       if($this->db->execute()) {
           return true;
       } else {
           return false;
       }
-    }
-    public function getAction() {
-      $this->db->query('SELECT FormAction FROM Forms WHERE FormsTypeID = 1');
-
     }
   }
 ?>
