@@ -73,7 +73,6 @@
             return $this->stmt->rowCount();
         }
 
-        //For REST API
         public function showJSON() {
             $this->execute();
             $data = $this->stmt->fetchAll(PDO::FETCH_ASSOC);

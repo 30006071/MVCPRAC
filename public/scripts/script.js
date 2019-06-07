@@ -1,30 +1,22 @@
 function validateForm() {
-    var a = document.forms["myForm"]["name"].value;
-    if (a == "") {
-      alert("Name must be filled out");
-      return false;
-    }
-    if(!NaN(a)){
+  var a =document.forms["myForm"]["name"].value;
+  var b= document.forms["myForm"]["phone"].value;
+  var c= document.forms["myForm"]["email"].value;
+  var d= document.forms["myForm"]["subject"].value;
+  if (a == "" || b == "" || c == "" || d == "") {
+    alert("All fields must be filled out");
+    return false;
+  }
+  else if(!isNaN(a)) {
     alert("Name cant have numbers");
     return false;
-    }
-    var  b= document.forms["myForm"]["phone"].value;
-    if (b == "") {
-      alert("Name must be filled out");
-      return false;
-    }
-    if(NaN(b)== true){
-      alert("Phone number cant have letters");
-      return false;
-    }
-    var  c= document.forms["myForm"]["email"].value;
-    if (c == "") {
-      alert("Name must be filled out");
-      return false;
-    }
-    var  d= document.forms["myForm"]["subject"].value;
-    if (d == "") {
-      alert("Name must be filled out");
-      return false;
-    }
   }
+  else if(isNaN(b)){
+    alert("Phone number cant have letters");
+    return false;
+  }
+  else if(!c.includes("@")) {
+    alert("Email must contain @ symbol");
+    return false;
+  }
+}

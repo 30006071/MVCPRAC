@@ -6,6 +6,7 @@
     .dissapear{
         display: none;
     }
+
  }
  body{
     font-family: Arial;
@@ -112,7 +113,19 @@ font-size: 100%;
 .centre{
     display: flex;
 }
+@media (min-width: 500px)
+{
+    .headertext{
 
+        
+        font-size: 0px;
+    }
+    .headertext1{
+        font-size: 0px;
+
+        
+    }
+}
 @media (max-width: 500px)
 {
      .headertext{
